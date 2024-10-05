@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+
+.bungefont{
+font-family: "Bungee Tint", sans-serif;
+}
+
+main{
+display: flex;
+justify-content: center;
+align-content: center;
+padding: 20vh;
+}
+.forgotpsconntainer{
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.logincontainer{
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+}
+  
+@media (min-width: 400px) { .rem-forgot{
+text-align: center;} 
+}
+
+.card{
+border-radius: 10px;
+height: 380px;
+}
+
+.card img{
+border: solid rgb(69, 67, 67) 5px;
+filter: grayscale(80%);
+border-radius: 50%;
+}
+
