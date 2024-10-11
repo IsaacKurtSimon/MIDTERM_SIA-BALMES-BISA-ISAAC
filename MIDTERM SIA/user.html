@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 60px;
+      padding: 0;
+      background-color: white;
+      text-align: center;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .profile-info {
+      display: flex;
+      align-items: center;
+    }
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin-right: 20px;
+    }
+    .profile-info h2 {
+      margin: 0;
+      text-align: center;
+    }
+    .profile-info p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+    .nav {
+      display: flex;
+      margin-top: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .nav button {
+      flex: 1;
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .nav button.active {
+      border-bottom: 2px solid #000;
+    }
+    .content {
+      padding: 20px 0;
+    }
+    .hidden {
+      display: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    table th {
+      background-color: #f2f2f2;
+    }
+    .logout {
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="profile-info">
+        <div class="profile-picture"></div>
+        <div>
+          <h2>Juan Dela Cruz</h2>
+          <p>juandelacruz@example.com</p>
+        </div>
+      </div>
+      <button class="logout" href="index.html">Logout</button>
+    </div>
+
+    <div class="nav">
+      <button class="nav-btn active" onclick="showSection('personal-info')">Personal Information</button>
+      <button class="nav-btn" onclick="showSection('order-history')">Order History</button>
+      <button class="nav-btn" onclick="showSection('points-raffles')">Points & Raffles</button>
+      <button class="nav-btn" onclick="showSection('delivery-progress')">Delivery Progress</button>
+    </div>
+
+    <div id="personal-info" class="content">
+      <h3>Personal Information</h3>
+      <form>
+        <label for="first-name">First Name:</label><br>
+        <input type="text" id="first-name" name="first-name" value="Juan"><br><br>
+
+        <label for="last-name">Last Name:</label><br>
+        <input type="text" id="last-name" name="last-name" value="Dela Cruz"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="juan@example.com"><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" value="0999999999"><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" value="Lipa City"><br><br>
+
+        <label for="password">Change Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Save">
+      </form>
+    </div>
+
+    <div id="order-history" class="content hidden">
+      <h3>Order History</h3>
+      <table>
+        <tr>
+          <th>Order Number</th>
+          <th>Product Name</th>
+          <th>Order Date</th>
+          <th>Status</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>#12345</td>
+          <td>Product 1</td>
+          <td>01-10-2024</td>
+          <td>Delivered</td>
+          <td>$50</td>
+        </tr>
+        <tr>
+          <td>#12346</td>
+          <td>Product 2</td>
+          <td>03-10-2024</td>
+          <td>In Progress</td>
+          <td>$120</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="points-raffles" class="content hidden">
+      <h3>Points & Raffles</h3>
+      <p><strong>Current Points:</strong> 250</p>
+      <p><strong>Raffle Entries:</strong> 5 entries for Raffle 2024</p>
+    </div>
+
+    <div id="delivery-progress" class="content hidden">
+      <h3>Delivery Progress</h3>
+      <table>
+        <tr>
+          <th>Order Number</th>
+          <th>Product Name</th>
+          <th>Status</th>
+          <th>Estimated Delivery</th>
+        </tr>
+        <tr>
+          <td>#12346</td>
+          <td>Product 2</td>
+          <td>In Transit</td>
+          <td>06-10-2024</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Remove active class from all nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show the selected section
+      document.getElementById(sectionId).classList.remove('hidden');
+
+      // Add active class to clicked nav button
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
